@@ -1,6 +1,6 @@
 class GameController < ApplicationController
   def rps
-    @user_move = params[:the_move]
+    @user_move = params[:the_move].upcase
 
     # This is MATT KIEPURA's RPS game for HWK 3 sbumission
 
@@ -9,14 +9,29 @@ class GameController < ApplicationController
     # The move the user chose is in the variable @user_move.
     # ===============================================================
 
-    # Your logic here
+    userMove = params[:the_move]
 
-    # In the end, make sure you assign the correct values to the
-    #   following two variables:
+    compMove = ["rock", "paper", "scissors"].sample
+    @computer_move = compMove.capitalize
 
-    @computer_move = "Replace this string with the correct value."
 
-    @result = "Replace this string with the correct value."
+    if userMove == compMove   # TIE
+      @result = "TIE"
+    elsif userMove == "rock" && compMove == "paper"   # COMP wins
+      @result = "LOSE. Computer wins."
+    elsif userMove == "rock" && compMove == "scissors"   # USER wins
+      @result = "WIN!!"
+    elsif userMove == "paper" && compMove == "rock"   # USER wins
+      @result = "WIN!!"
+    elsif userMove == "paper" && compMove == "scissors"   # COMP wins
+      @result = "LOSE. Computer wins."
+    elsif userMove == "scissors" && compMove == "rock"   # COMP wins
+      @result = "LOSE. Computer wins."
+    elsif userMove == "scissors" && compMove == "paper"   # USER wins
+      @result = "WIN!!"
+    else    # User must have entered "quit" or another invalid entry
+      @result = "<Bug Check> Invalid entry somehow"
+    end
 
     # ===============================================================
     # Your code goes above.
