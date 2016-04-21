@@ -2,6 +2,8 @@ class GameController < ApplicationController
   def rps
     @user_move = params[:the_move]
 
+    # This is MATT KIEPURA's RPS game for HWK 3 sbumission
+
     # ===============================================================
     # Your code goes below.
     # The move the user chose is in the variable @user_move.
