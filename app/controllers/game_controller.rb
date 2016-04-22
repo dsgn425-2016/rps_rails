@@ -14,7 +14,8 @@ class GameController < ApplicationController
 
     @computer_move = "Replace this string with the correct value."
 
-    @result = "Replace this string with the correct value."
+    @result = "Manasa Reddy Yeturu"
+    
 
     # ===============================================================
     # Your code goes above.
