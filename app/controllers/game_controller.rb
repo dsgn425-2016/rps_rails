@@ -15,19 +15,19 @@ class GameController < ApplicationController
     @computer_move = ["rock","paper","scissors"].sample
 
     if @user_move == @computer_move
-      @result = "It's a tie!"
+      @result = "tied"
     elsif @user_move == "rock" and @computer_move == "paper"
-      @result = "lose!"
+      @result = "lose"
     elsif @user_move == "rock" and @computer_move == "scissors"
-      @result = "win!"
+      @result = "win"
     elsif @user_move == "paper" and @computer_move == "rock"
-      @result = "win!"
+      @result = "win"
     elsif @user_move == "paper" and @computer_move == "scissors"
-      @result = "lose!"
+      @result = "lose"
     elsif @user_move == "scissors" and @computer_move == "rock"
-      @result = "lose!"
+      @result = "lose"
     elsif @user_move == "scissors" and @computer_move == "paper"
-      @result = "win!"
+      @result = "win"
     end
 
     # ===============================================================
