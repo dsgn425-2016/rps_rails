@@ -4,6 +4,26 @@ class GameController < ApplicationController
 
     # ===============================================================
     # Your code goes below.
+
+    computer = ["paper", "scissors", "rock"]
+    @computer_move = computer.sample
+
+    if @user_move.length == @computer_move.length
+      @result = "tied"
+    elsif @user_move.length == 4 && @computer_move.length ==5
+      @result = "lose"
+    elsif @user_move.length == 4 && @computer_move.length ==8
+      @result = "win"
+    elsif @user_move.length == 5 && @computer_move.length ==8
+      @result = "lose"
+    elsif @user_move.length == 5 && @computer_move.length ==4
+      @result = "win"
+    elsif @user_move.length == 8 && @computer_move.length ==4
+      @result = "lose"
+    elsif @user_move.length == 8 && @computer_move.length ==5
+      @result = "win"
+    end
+
     # The move the user chose is in the variable @user_move.
     # ===============================================================
 
@@ -11,10 +31,6 @@ class GameController < ApplicationController
 
     # In the end, make sure you assign the correct values to the
     #   following two variables:
-
-    @computer_move = "Replace this string with the correct value."
-
-    @result = "Replace this string with the correct value."
 
     # ===============================================================
     # Your code goes above.
