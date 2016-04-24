@@ -28,8 +28,7 @@ class GameController < ApplicationController
       elsif @user_move == "scissors" && @computer_move == "paper"
         @result = "win!"
       end
-      
-    @result = "Replace this string with the correct value."
+
 
 
     # ===============================================================
