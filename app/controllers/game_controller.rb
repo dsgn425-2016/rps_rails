@@ -12,14 +12,31 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+    computer_move = ["rock", "paper", "scissors"].sample
 
-    @result = "Replace this string with the correct value."
+    @computer_move = "#{computer_move}"
+
+    if @user_move == @computer_move
+          @result = "tied!"
+    elsif @user_move == "paper" && @computer_move == "rock"
+          @result = "win!"
+    elsif @user_move == "paper" && @computer_move == "scissors"
+          @result = "lose!"
+    elsif @user_move == "scissors" && @computer_move == "rock"
+          @result = "lose!"
+    elsif @user_move == "scissors" && @computer_move == "paper"
+          @result = "win!"
+    elsif @user_move == "rock" && @computer_move == "paper"
+          @result = "lose!"
+    elsif @user_move == "rock" && @computer_move == "scissors"
+          @result = "win!"
+# <!-- Find results control in: <p>Find me in app/views/game/rps.html.erb</p> -->
 
     # ===============================================================
     # Your code goes above.
     # ===============================================================
-
+end
     render("rps.html.erb")
   end
+
 end
