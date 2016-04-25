@@ -12,13 +12,16 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
 
-    @result = "Replace this string with the correct value."
-
-    # ===============================================================
-    # Your code goes above.
-    # ===============================================================
+    if @user_move == @computer_move
+    elsif @user_move == "rock" && @computer_move =="paper"
+    elsif @user_move == "rock" && @computer_move =="sissors"
+    elsif @user_move == "paper" && @computer_move =="rock"
+    elsif @user_move == "paper" && @computer_move =="sissors"
+    end
+    #  ===============================================================
+    #     Your code goes above.
+    #     ===============================================================
 
     render("rps.html.erb")
   end
