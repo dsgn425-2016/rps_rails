@@ -12,9 +12,59 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+if @computer_move = "rock"
+  while @user_move = "scissors"
+    @result = "lose"
+  end
+end
 
-    @result = "Replace this string with the correct value."
+if @computer_move = "rock"
+  while @user_move = "paper"
+    @result = "win"
+  end
+end
+
+if @computer_move = "rock"
+  while @user_move = "rock"
+    @result = "tie"
+  end
+end
+
+if @computer_move = "paper"
+  while @user_move = "rock"
+    @result = "lose"
+  end
+end
+
+if @computer_move = "paper"
+  while @user_move = "paper"
+    @result = "tie"
+  end
+end
+
+if @computer_move = "paper"
+  while @user_move = "scissors"
+    @result = "win"
+  end
+end
+
+if @computer_move = "scissors"
+  while @user_move = "rock"
+    @result = "win"
+  end
+end
+
+if @computer_move = "scissors"
+  while @user_move = "paper"
+    @result = "lose"
+  end
+end
+
+if @computer_move = "scissors"
+  while @user_move = "scissors"
+    @result = "tie"
+  end
+end
 
     # ===============================================================
     # Your code goes above.
