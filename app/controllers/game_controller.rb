@@ -6,19 +6,28 @@ class GameController < ApplicationController
     # Your code goes below.
     # The move the user chose is in the variable @user_move.
     # ===============================================================
+    @move=["rock","paper","scissors"]
+    @computer_make_move=@move.sample
 
-    # Your logic here
+    if @user_move.downcase==@computer_make_move.downcase
+  @result_mem="Its a tie"
+elsif @user_move.downcase=="paper" && @computer_make_move.downcase=="rock"
+  @result_mem=" win :) "
+elsif @user_move.downcase=="paper" && @computer_make_move.downcase=="scissors"
+  @result_mem=" lose :( "
+elsif @user_move.downcase=="scissors" && @computer_make_move.downcase=="rock"
+  @result_mem=" lose :( "
+elsif @user_move.downcase=="scissors" && @computer_make_move.downcase=="paper"
+  @result_mem=" win :) "
+elsif @user_move.downcase=="rock" && @computer_make_move.downcase=="paper"
+  @result_mem=" lose :( "
+elsif @user_move.downcase=="rock" && @computer_make_move.downcase=="scissors"
+  @result_mem=" win :) "
+end
 
-    # In the end, make sure you assign the correct values to the
-    #   following two variables:
+    @computer_move="#{@computer_make_move}"
 
-    @computer_move = "Replace this string with the correct value."
-
-    @result = "Replace this string with the correct value."
-
-    # ===============================================================
-    # Your code goes above.
-    # ===============================================================
+    @result ="#{@result_mem}"
 
     render("rps.html.erb")
   end
