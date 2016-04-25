@@ -8,13 +8,31 @@ class GameController < ApplicationController
     # ===============================================================
 
     # Your logic here
-
+    moves = ["rock","paper","scissors"]
+    rando = rand(2)
     # In the end, make sure you assign the correct values to the
     #   following two variables:
+    comp_move = moves[rando]
+    human_win = "you win"
+    comp_win = "computer wins"
 
-    @computer_move = "Replace this string with the correct value."
+    move = @user_move
 
-    @result = "Replace this string with the correct value."
+    @computer_move = comp_move
+    result = ''
+
+    if move == "rock" && comp_move == "paper" || move == "paper" && comp_move == "scissors" || move == "scissors" && comp_move == "rock"
+      result = comp_win
+    elsif move == "rock" && comp_move == "scissors" || move == "paper" && comp_move == "rock" || move =="scissors" && comp_move =="paper"
+      result = human_win
+    elsif move == comp_move
+      result = "It's a tie!"
+    end
+
+
+
+
+    @result = result
 
     # ===============================================================
     # Your code goes above.
