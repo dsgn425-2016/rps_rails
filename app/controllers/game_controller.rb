@@ -12,6 +12,7 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
+
     @computer_move = ["rock", "paper", "scissors"].sample
 
     if @user_move == @computer_move
@@ -29,6 +30,7 @@ class GameController < ApplicationController
     elsif @user_move == "rock" && @computer_move == "scissors"
       @result = "win!"
     end
+
 
     # ===============================================================
     # Your code goes above.
