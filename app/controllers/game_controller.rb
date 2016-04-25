@@ -12,10 +12,37 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+# RPS Attempt
 
-    @result = "Manasa Reddy Yeturu"
-    
+puts "Welcome to RPS!"
+
+puts "Rock, Paper, or Scissors?"
+
+usermove = gets.chomp
+
+puts "You chose #{usermove}."
+
+computermove = ["rock", "paper", "scissors"].sample
+
+puts "The computer chose #{computermove}."
+
+if usermove == computermove
+  puts "You tied!"
+elsif usermove == "paper" && computermove == "rock"
+  puts "You WIN!"
+elsif usermove == "paper" && computermove == "scissors"
+  puts "You lose!"
+elsif usermove == "scissors" && computermove == "rock"
+  puts "You lose!"
+elsif usermove == "scissors" && computermove == "paper"
+  puts "You WIN!"
+elsif usermove == "rock" && computermove == "paper"
+  puts "You lose!"
+elsif usermove == "rock" && computermove == "scissors"
+  puts "You WIN!"
+end
+
+
 
     # ===============================================================
     # Your code goes above.
