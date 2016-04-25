@@ -15,6 +15,6 @@ class GameController < ApplicationController
     @computer_move = "#{@computer_movesave}"
     @result = "#{@resultsave}"
 
-    render("rps.html.erb")
+  render("rps.html.erb")
   end
 end
