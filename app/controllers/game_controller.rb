@@ -12,22 +12,22 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @comp_move = ["rock", "paper", "scissors"].sample
+    @computer_move = ["rock", "paper", "scissors"].sample
 
-    if @user_move == @comp_move
+    if @user_move == @computer_move
         @result = "tie"
-      elsif @user_move == "rock" && @comp_move == "paper"
+      elsif @user_move == "rock" && @computer_move == "paper"
         @result = "lose"
-      elsif @user_move == "rock" && @comp_move == "scissors"
+      elsif @user_move == "rock" && @computer_move == "scissors"
         @result = "win"
-      elsif @user_move == "paper" && @comp_move == "scissors"
+      elsif @user_move == "paper" && @computer_move == "scissors"
         @result = "lose"
-      elsif @user_move == "paper" && @comp_move == "rock"
+      elsif @user_move == "paper" && @computer_move == "rock"
         @result = "win"
-      elsif @user_move == "scissors" && @comp_move == "rock"
+      elsif @user_move == "scissors" && @computer_move == "rock"
         @result = "lose"
-      elsif @user_move == "scissors" && @comp_move == "paper"
-        @result = "win!"
+      elsif @user_move == "scissors" && @computer_move == "paper"
+        @result = "win"
       else
         @result = "Try again."
       end
